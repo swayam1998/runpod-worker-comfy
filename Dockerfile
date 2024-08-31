@@ -22,7 +22,7 @@ RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
 
 # Change working directory to ComfyUI
-WORKDIR /
+WORKDIR /comfyui
 
 # Install ComfyUI dependencies
 RUN pip3 install --upgrade --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
@@ -35,7 +35,7 @@ RUN pip3 install runpod requests
 # ADD src/extra_model_paths.yaml ./
 
 # Go back to the root
-# WORKDIR /
+WORKDIR /
 
 # Add the start and the handler
 ADD src/start.sh src/rp_handler.py test_input.json ./
