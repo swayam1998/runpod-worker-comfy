@@ -79,4 +79,4 @@ RUN chmod +x /start.sh
 CMD /start.sh
 
 
-# docker build -t swayamjeet/runpod-worker-comfy:1.0.0 --target base --platform linux/amd64 .
+# docker build -t swayamjeet/runpod-worker-comfy:1.0.5 --target base --platform linux/amd64 .
